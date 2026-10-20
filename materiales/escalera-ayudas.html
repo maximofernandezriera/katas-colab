@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Escalera de ayudas — Katas Think Python (cap. 1–5)</title>
+<style>
+  :root { --accent:#0e6b5c; --n1:#2a7f62; --n2:#b07d10; --n3:#a3353b; --light:#f2f7f5; }
+  * { box-sizing:border-box; }
+  body { font-family:"Segoe UI", system-ui, sans-serif; color:#1a1a1a;
+         max-width:800px; margin:0 auto; padding:28px 22px; line-height:1.45; }
+  h1 { font-size:1.5rem; color:var(--accent); border-bottom:3px solid var(--accent); padding-bottom:8px; }
+  .instr { background:var(--light); border-left:4px solid var(--accent);
+           padding:12px 16px; font-size:.93rem; border-radius:0 8px 8px 0; }
+  .instr code { background:#e2ece9; padding:1px 5px; border-radius:4px; }
+  h2.kata { font-size:1.08rem; margin:26px 0 4px; }
+  .kyu { font-size:.75rem; color:#5a6b66; font-weight:normal; }
+  details { border:1px solid #cfd8d4; border-radius:10px; margin:8px 0; overflow:hidden; }
+  summary { cursor:pointer; padding:10px 14px; font-weight:600; list-style:none; }
+  summary::before { content:"▸ "; }
+  details[open] summary::before { content:"▾ "; }
+  details.a summary { background:#eaf4f0; color:var(--n1); }
+  details.b summary { background:#fdf6e3; color:var(--n2); }
+  details.c summary { background:#fbecec; color:var(--n3); }
+  details > div { padding:10px 16px 14px; font-size:.93rem; }
+  pre { background:#10312a; color:#e8f5f0; padding:12px 14px; border-radius:8px;
+        overflow-x:auto; font-size:.85rem; line-height:1.5; }
+  code { font-family:"Cascadia Code", Consolas, monospace; }
+  .hueco { color:#ffd166; background:#1d4a3f; padding:0 4px; border-radius:3px; }
+  footer { margin-top:26px; font-size:.78rem; color:#5a6b66; border-top:1px solid #cfd8d4; padding-top:10px; }
+</style>
+</head>
+<body>
+<h1>Escalera de ayudas — Katas capítulos 1–5</h1>
+
+<div class="instr">
+  <b>Regla de la escalera:</b> intenta primero el kata sin ayuda. Solo si llevas
+  <b>15 minutos atascado</b> bajas un peldaño: Nivel 1 (pista de clase) →
+  Nivel 2 (pseudocódigo) → Nivel 3 (esqueleto con huecos).
+  <b>Nunca</b> saltes al Nivel 3 sin haber leído el Nivel 1.
+  Los huecos se muestran como <code>___</code>: rellénalos tú.
+</div>
+
+<h2 class="kata">1 · Beginner Series #2 Clock <span class="kyu">8 kyu · cap. 1–2</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+No hay ningún <code>if</code>: es aritmética pura. Convierte todo a segundos y luego a milisegundos.
+1 hora = 3600 s, 1 minuto = 60 s, 1 segundo = 1000 ms. Recuerda: el kata pide
+<b>devolver</b> (<code>return</code>), no imprimir.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función past(h, m, s):
+    segundos_totales ← h × 3600  +  m × 60  +  s
+    devolver segundos_totales × 1000</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def past(h, m, s):
+    return (h * <span class="hueco">___</span> + m * <span class="hueco">___</span> + s) * <span class="hueco">___</span></pre></div></details>
+
+<h2 class="kata">2 · String repeat <span class="kyu">8 kyu · cap. 1, 3</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+En Python las cadenas se pueden <b>multiplicar</b> por un entero:
+<code>"ab" * 3</code> da <code>"ababab"</code>. No necesitas bucle ni condicional.
+Piensa qué pasa si <code>n</code> es 0.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función repeat_str(n, s):
+    devolver s repetido n veces      ← s * n</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def repeat_str(n, s):
+    return s <span class="hueco">___</span> n</pre></div></details>
+
+<h2 class="kata">3 · Find Nearest square number <span class="kyu">8 kyu · cap. 1–2</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+La raíz cuadrada de <code>n</code> casi nunca es entera. <code>math.sqrt(n)</code> te da el número
+cuyo cuadrado sería <code>n</code>; <code>round()</code> elige el entero más cercano (baja o sube según
+cuál cuadre mejor). Después eleva al cuadrado ese entero.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>import math
+función nearest_sq(n):
+    r ← raíz cuadrada de n
+    k ← entero más cercano a r      ← round(r)
+    devolver k al cuadrado           ← k ** 2</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>import math
+def nearest_sq(n):
+    k = <span class="hueco">___</span>(math.sqrt(n))
+    return k <span class="hueco">___</span> 2</pre></div></details>
+
+<h2 class="kata">4 · Multiply <span class="kyu">8 kyu · cap. 3</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+Es una kata de <b>depuración</b>: la función ya existe y multiplica bien,
+pero el resultado nunca llega a salir de ella. Compara con cualquier función
+del libro que sí funcione: ¿qué palabra clave le falta?</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función multiply(a, b):
+    calcular a × b
+    DEVOLVER el resultado          ← palabra clave: return</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def multiply(a, b):
+    <span class="hueco">___</span> a * b</pre></div></details>
+
+<h2 class="kata">5 · Even or Odd <span class="kyu">8 kyu · cap. 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+<code>n % 2</code> es el resto de dividir entre 2: par → 0, impar → 1.
+Ojo con la salida: devuelves <b>texto</b> (<code>"Even"</code>/<code>"Odd"</code>), no un booleano.
+Respeta las mayúsculas exactas.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función even_or_odd(n):
+    si n % 2 == 0 → devolver "Even"
+    si no        → devolver "Odd"</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def even_or_odd(number):
+    if number <span class="hueco">___</span> 2 == 0:
+        return <span class="hueco">___</span>
+    else:
+        return <span class="hueco">___</span></pre></div></details>
+
+<h2 class="kata">6 · Exclusive "or" (xor) <span class="kyu">8 kyu · cap. 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+«O exclusiva» = uno u otro, <b>pero no ambos</b>. Solo es <code>True</code> cuando los dos
+valores son <b>distintos</b>. Piensa qué operador de comparación compara «distinto».
+También puedes construirlo con <code>and</code>/<code>or</code>/<code>not</code>.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función xor(a, b):
+    si a y b son distintos → True
+    si son iguales        → False
+    forma corta: devolver a != b</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def xor(a, b):
+    return a <span class="hueco">___</span> b</pre></div></details>
+
+<h2 class="kata">7 · Calculate BMI <span class="kyu">8 kyu · cap. 1, 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+Primero calcula <code>bmi = peso / altura ** 2</code>. Después encadena
+<code>if / elif / else</code> <b>de menor a mayor</b> (18.5, luego 25, luego 30):
+cada <code>elif</code> solo se evalúa si el anterior ya falló, así no necesitas
+rangos por los dos lados.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función bmi(peso, altura):
+    b ← peso / altura²
+    si b <= 18.5 → "Underweight"
+    si no, b <= 25  → "Normal"
+    si no, b <= 30  → "Overweight"
+    si no         → "Obese"</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def bmi(weight, height):
+    b = weight / height <span class="hueco">___</span> 2
+    if b <= 18.5:  return "Underweight"
+    elif b <= <span class="hueco">___</span>:   return "Normal"
+    elif b <= <span class="hueco">___</span>:   return "Overweight"
+    else:               return <span class="hueco">___</span></pre></div></details>
+
+<h2 class="kata">8 · Is this a triangle? <span class="kyu">7 kyu · cap. 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+Desigualdad triangular: cada lado debe ser <b>menor</b> que la suma de los otros dos.
+Ojo: el kata exige triángulos con área &gt; 0, así que la comparación es
+<b>estricta</b> (<code>&gt;</code>, no <code>&gt;=</code>). <code>1,2,3</code> no vale.
+Son tres comprobaciones unidas con <code>and</code>.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función is_triangle(a, b, c):
+    devolver (a + b > c)  y  (a + c > b)  y  (b + c > a)
+    las TRES a la vez</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def is_triangle(a, b, c):
+    return a + b <span class="hueco">___</span> c <span class="hueco">___</span> a + c > b <span class="hueco">___</span> b + c > a</pre></div></details>
+
+<h2 class="kata">9 · Rock Paper Scissors! <span class="kyu">8 kyu · cap. 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+Solo hay <b>3 casos</b> en los que gana el jugador 1:
+<code>rock&gt;scissors</code>, <code>scissors&gt;paper</code>, <code>paper&gt;rock</code>.
+Comprueba primero el empate (<code>p1 == p2</code>), luego los 3 casos ganadores
+(un <code>or</code> de tres condiciones), y todo lo demás es victoria del 2.
+Las cadenas se comparan con <code>==</code> y son en inglés.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>función rps(p1, p2):
+    si p1 == p2              → "Draw!"
+    si (p1,p2) es uno de los
+       3 pares ganadores     → "Player 1 won!"
+    si no                    → "Player 2 won!"</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def rps(p1, p2):
+    if p1 <span class="hueco">___</span> p2:
+        return "Draw!"
+    if (p1 == "rock"     and p2 == <span class="hueco">___</span>) or \
+       (p1 == <span class="hueco">___</span>     and p2 == "paper") or \
+       (p1 == "paper"    and p2 == <span class="hueco">___</span>):
+        return "Player 1 won!"
+    return <span class="hueco">___</span></pre></div></details>
+
+<h2 class="kata">10 · Grasshopper - Summation <span class="kyu">8 kyu · cap. 5</span></h2>
+<details class="a"><summary>Nivel 1 — Pista de clase</summary><div>
+Hay tres caminos: (a) <b>recursión</b> — caso base <code>num == 1 → 1</code> y
+caso general <code>num + lo_mismo(num-1)</code>; (b) un bucle que acumula;
+(c) la fórmula directa <code>n*(n+1)//2</code>. Si tu profe pide practicar recursión,
+usa la (a) obligatoriamente.</div></details>
+<details class="b"><summary>Nivel 2 — Pseudocódigo</summary><div>
+<pre>recursiva:
+  si num == 1 → devolver 1            ← caso base
+  si no → devolver num + summation(num-1)
+
+fórmula:
+  devolver num * (num + 1) // 2</pre></div></details>
+<details class="c"><summary>Nivel 3 — Esqueleto con huecos</summary><div>
+<pre>def summation(num):
+    if num == <span class="hueco">___</span>:
+        return 1
+    return num + <span class="hueco">___</span>(num - 1)
+
+# o en una línea:
+# return num * (num + <span class="hueco">___</span>) // 2</pre></div></details>
+
+<footer>
+  Escalera de ayudas · Codewars Workbench — cada nivel desbloqueado se apunta
+  en el diario de resolución: te ayuda a saber dónde te atascas.
+</footer>
+</body>
+</html>
