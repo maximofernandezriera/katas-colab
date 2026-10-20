@@ -236,6 +236,8 @@ def build_notebook(kata: dict, slug: str, lang: str = "es") -> dict:
     header = f"""\
 # Banco de pruebas Codewars: {kata['name']} (`{rank}`)
 
+[![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maximofernandezriera/katas-colab/blob/main/notebooks/kata-{slug}.ipynb)
+
 Notebook generado con `kata2notebook.py` a partir de
 [{kata['url']}]({kata['url']}).
 
