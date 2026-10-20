@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Lectura del kata — hoja de ruta</title>
+<style>
+  :root { --ink:#1a1a1a; --accent:#0e6b5c; --light:#f2f7f5; }
+  * { box-sizing:border-box; }
+  body { font-family:"Segoe UI", system-ui, sans-serif; color:var(--ink);
+         max-width:760px; margin:0 auto; padding:28px 22px; line-height:1.45; }
+  h1 { font-size:1.5rem; color:var(--accent); border-bottom:3px solid var(--accent); padding-bottom:8px; }
+  h2 { font-size:1.05rem; color:var(--accent); margin:22px 0 6px; }
+  .instr { background:var(--light); border-left:4px solid var(--accent);
+           padding:10px 14px; font-size:.92rem; border-radius:0 8px 8px 0; }
+  .q { border:1px solid #cfd8d4; border-radius:10px; padding:12px 14px; margin:12px 0; }
+  .q b { color:var(--accent); }
+  .lines { border-bottom:1px dotted #9db5ae; min-height:34px; margin-top:8px; }
+  .lines.doble { min-height:66px; }
+  .check { margin:4px 0; }
+  .check input { transform:scale(1.3); margin-right:8px; accent-color:var(--accent); }
+  table { border-collapse:collapse; width:100%; margin-top:8px; }
+  td,th { border:1px solid #cfd8d4; padding:8px 10px; font-size:.9rem; text-align:left; }
+  th { background:var(--light); }
+  footer { margin-top:26px; font-size:.78rem; color:#5a6b66; border-top:1px solid #cfd8d4; padding-top:10px; }
+  @media print { body{max-width:none;padding:0;} .instr{background:#fff;} }
+</style>
+</head>
+<body>
+<h1>Lectura del kata — hoja de ruta</h1>
+
+<div class="instr">
+  <b>Antes de escribir código</b>, rellena esta hoja leyendo el enunciado del kata en Codewars.
+  Funciona con <b>cualquier</b> kata. Si no puedes responder una pregunta, vuelve al enunciado:
+  ahí está la respuesta. Regla de oro: <b>entender el problema ya es la mitad del ejercicio</b>.
+</div>
+
+<h2>Datos del kata</h2>
+<table>
+  <tr><th>Nombre del kata</th><th>Nivel (kyu)</th><th>Fecha</th></tr>
+  <tr><td style="height:26px"></td><td></td><td></td></tr>
+</table>
+
+<h2>Paso 1 · Entradas y salida</h2>
+<div class="q"><b>¿Qué recibo?</b> ¿Cuántos parámetros? ¿De qué tipo (número, texto, booleano…)?
+  <div class="lines"></div></div>
+<div class="q"><b>¿Qué devuelvo?</b> Un número, un texto, un booleano… ¿el texto es exacto (mayúsculas, signos)?
+  <div class="lines"></div></div>
+<div class="q"><b>Ejemplo del enunciado, con mis palabras:</b> coge un ejemplo y explica por qué da ese resultado.
+  <div class="lines doble"></div></div>
+
+<h2>Paso 2 · Casos límite</h2>
+<div class="q"><b>¿Qué valores raros puede recibir?</b> Marca los que apliquen y escribe qué debería pasar:
+  <div class="check"><input type="checkbox"> 0 o números negativos</div>
+  <div class="check"><input type="checkbox"> cadena vacía o muy larga</div>
+  <div class="check"><input type="checkbox"> lista vacía</div>
+  <div class="check"><input type="checkbox"> valores iguales / empate</div>
+  <div class="check"><input type="checkbox"> ya resuelto (no hay nada que calcular)</div>
+  <div class="lines"></div></div>
+
+<h2>Paso 3 · La decisión</h2>
+<div class="q"><b>¿Qué pregunta hace el <code>if</code>?</b> Escríbela como pregunta de sí/no en castellano.
+  <div class="lines"></div></div>
+<div class="q"><b>¿Cuántas respuestas posibles hay?</b> Ordena las condiciones: ¿cuál se comprueba primero?
+  <div class="lines"></div></div>
+<div class="q"><b>Operadores que necesito:</b> <code>%</code> <code>/</code> <code>*</code> <code>**</code> <code>and</code> <code>or</code> <code>not</code> <code>==</code> <code>!=</code> <code>&lt;=</code> …
+  <div class="lines"></div></div>
+
+<h2>Paso 4 · Mi plan antes de programar</h2>
+<div class="q"><b>Pasos en castellano</b> (sin código; uno por línea):
+  <div class="lines doble"></div></div>
+<div class="q"><b>Vocabulario nuevo del enunciado</b> (palabras en inglés que debes entender):
+  <div class="lines"></div></div>
+
+<h2>Paso 5 · Después de resolver</h2>
+<div class="q"><b>¿Mis tests cubren los casos límite del Paso 2?</b>
+  <div class="check"><input type="checkbox"> Sí &nbsp; <input type="checkbox"> No — falta probar: </div>
+  <div class="lines"></div></div>
+<div class="q"><b>Una cosa que aprendí con este kata:</b>
+  <div class="lines"></div></div>
+
+<footer>
+  Think Python · Codewars Workbench — rellénala SIEMPRE antes del Paso 2 del notebook.
+</footer>
+</body>
+</html>
